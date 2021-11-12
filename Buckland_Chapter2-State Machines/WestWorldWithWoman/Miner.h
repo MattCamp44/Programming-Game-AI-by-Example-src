@@ -16,8 +16,9 @@
 #include "Locations.h"
 #include "MinerOwnedStates.h"
 #include "StateMachine.h"
+#include "State.h"
 
-class State;
+//class State;
 
 //the amount of gold a miner must have before he feels comfortable
 const int ComfortLevel       = 5;

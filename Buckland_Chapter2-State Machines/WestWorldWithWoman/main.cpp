@@ -2,10 +2,14 @@
 #include "Locations.h"
 #include "Miner.h"
 #include "MinersWife.h"
-#include "misc/ConsoleUtils.h"
+//#include "misc/ConsoleUtils.h"
 #include "EntityNames.h"
 
-
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
 
 std::ofstream os;
 
@@ -28,11 +32,11 @@ int main()
     Bob.Update();
     Elsa.Update();
 
-    Sleep(800);
+    Sleep(1000);
   }
 
   //wait for a keypress before exiting
-  PressAnyKeyToContinue();
+  //PressAnyKeyToContinue();
 
   return 0;
 }

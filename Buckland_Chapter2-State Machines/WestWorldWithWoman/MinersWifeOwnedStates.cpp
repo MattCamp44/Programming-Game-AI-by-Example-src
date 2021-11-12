@@ -24,7 +24,7 @@ WifesGlobalState* WifesGlobalState::Instance()
 void WifesGlobalState::Execute(MinersWife* wife)
 {
   //1 in 10 chance of needing the bathroom
-  if (RandFloat() < 0.1)
+  if (static_cast<float>(rand())/static_cast<float>(RAND_MAX) < 0.1)
   {
     wife->GetFSM()->ChangeState(VisitBathroom::Instance());
   }
@@ -47,7 +47,7 @@ void DoHouseWork::Enter(MinersWife* wife)
 
 void DoHouseWork::Execute(MinersWife* wife)
 {
-  switch(RandInt(0,2))
+  switch(static_cast<int>(rand()/RAND_MAX))
   {
   case 0:
 
@@ -65,7 +65,7 @@ void DoHouseWork::Execute(MinersWife* wife)
 
     cout << "\n" << GetNameOfEntity(wife->ID()) << ": Makin' the bed";
 
-    break;
+  default:  break;
   }
 }
 
